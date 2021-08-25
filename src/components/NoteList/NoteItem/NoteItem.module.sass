@@ -1,11 +1,18 @@
+.noteItemContainer
+  background-color: rgba(62, 73, 141, 0.01)
+  border-radius: 5px
+  width: 90%
+  padding: 5px
+
 .noteItem
   cursor: pointer
   overflow: hidden
   padding: 5px 10px
-  margin: 5px
-  width: 90%
+  width: 100%
+  flex: none
   height: 65px
   background-color: rgba(62, 73, 141, 0.1)
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.24)
   border-radius: 5px 20px
   display: flex
   align-items: flex-start
@@ -25,3 +32,25 @@
     &:hover
       color: #ff0000
       transform: scale(1.1)
+
+  p
+    width: 450px
+    height: 55px
+
+.tagsBlock li
+  cursor: pointer
+  background: lightblue
+  border-radius: 50px
+  display: inline-block
+  padding: 2px 5px
+  margin-right: 5px
+  font-size: 10px
+  transition: .2s
+  &:hover
+    background: lightcoral
+    transform: scale(1.1)
+
+ul
+  float: left
+  list-style-type: none
+  text-decoration: none

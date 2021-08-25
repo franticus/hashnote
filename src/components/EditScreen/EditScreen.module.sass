@@ -1,6 +1,7 @@
 .editScreen
   width: 100%
   height: 100%
+  z-index: 10
 
   .editTitle
     margin-bottom: 5px
@@ -28,17 +29,19 @@
       background-color: rgba(56, 105, 141, 1)
 
   .noteEditor
-     position: absolute
-     padding: 10px
-     width: 100%
-     height: 82%
-     top: 58px
-     background: aliceblue
-     display: flex
-     align-items: center
-     justify-content: center
-     flex-direction: column
-     textarea
+    position: fixed
+    top: 80px
+    padding: 10px
+    width: 600px
+    height: 595px
+
+    background: aliceblue
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+
+    textarea
       padding: 10px
       font-size: 20px
       font-family: inherit

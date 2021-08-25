@@ -20,16 +20,16 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\JS\hashnote\src\components" />
-      <recent name="D:\JS\hashnote\public" />
-      <recent name="D:\JS\hashnote\src\components\EditScreen" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JS\hashnote\src\components" />
       <recent name="D:\JS\hashnote\src\components\EditScreen" />
       <recent name="D:\JS\hashnote\src\components\HomeScreen" />
       <recent name="D:\JS\hashnote\src\components\HomeScreen\NoteList" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JS\hashnote\src\components" />
+      <recent name="D:\JS\hashnote\public" />
+      <recent name="D:\JS\hashnote\src\components\EditScreen" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -42,7 +42,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629791864649</updated>
-      <workItem from="1629791866393" duration="32662000" />
+      <workItem from="1629791866393" duration="32872000" />
+      <workItem from="1629873080916" duration="14383000" />
     </task>
     <servers />
   </component>
@@ -50,6 +51,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="242" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1629884391609">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="242" y="331" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1629884391609" />
     <state x="210" y="275" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629792329623">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
