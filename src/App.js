@@ -38,7 +38,6 @@ function App() {
         })
         setNote({...note, text: note.text, tags: note.tags})
     }
-
     const filterTags = () => {
     const tags = note.text.split(' ')
     const res = []
@@ -49,9 +48,6 @@ function App() {
         }
         return res
     }
-
-    console.log(filterTags())
-
     const addNote = () => {
         if (showEdit.step === 3) {
             const editPost = noteList.map(o => {
@@ -65,14 +61,12 @@ function App() {
         }
         if (showEdit.step === 2 && note.text !== '') {
 
-            const newNote = {...note, id: Date.now(), tags: filterTags}
+            const newNote = {...note, id: Date.now(), tags: filterTags()}
             setNoteList([...noteList, newNote])
+            console.log('NewNote' , newNote)
         }
         editToggle()
     }
-
-    console.log('NoteList', noteList)
-
     const removeNote = (note) => {
         setNoteList(noteList.filter(n => n.id !== note.id))
     }
@@ -83,6 +77,9 @@ function App() {
     const clearSearch = () => {
         setSearchNote('')
     }
+    const tagSearch = (e) => {
+        setSearchNote(e.target.innerText)
+    }
 
     return (
         <div className="App">
@@ -91,7 +88,7 @@ function App() {
                        onChange={e => setSearchNote(e.target.value)}
             />
             <NoteList notes={searchedNotes} editNote={editNote}
-                      remove={removeNote} tags={filterTags()}
+                      remove={removeNote} tagSearch={e => tagSearch(e)}
             />
             {showEdit.onShow
                 ? <EditScreen create={addNote} note={note} cancel={editToggle}

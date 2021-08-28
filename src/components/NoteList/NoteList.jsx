@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './NoteList.module.sass'
 import NoteItem from "./NoteItem/NoteItem";
 
-const NoteList = ({notes, remove, editNote, tags}) => {
+const NoteList = ({notes, remove, editNote, tagSearch}) => {
 
     return (
         <div className={classes.noteList}>
@@ -11,7 +11,8 @@ const NoteList = ({notes, remove, editNote, tags}) => {
                           remove={() => remove(note)}
                           editNote={() => editNote(note)}
                           id={index}
-                          tags={tags}
+                          tags={note.tags}
+                          tagSearch={e => tagSearch(e)}
                           text={note.text}
                 />
             ))}

@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './NoteItem.module.sass'
 import MyButton from "../../ui/MyButton/MyButton";
 
-const NoteItem = ({text, id, remove, editNote, tags}) => {
+const NoteItem = ({text, id, remove, editNote, tags, tagSearch}) => {
 
     return (
         <div className={classes.noteItemContainer}>
@@ -16,8 +16,10 @@ const NoteItem = ({text, id, remove, editNote, tags}) => {
             </div>
             {console.log('TAGS', tags)}
             <ul className={classes.tagsBlock}>
-                {tags.length >= 1 ? tags.map((tag, index) => (
-                    <li key={index}>{tag}</li>
+                {tags.length >= 1
+                    ?
+                    tags.map((tag, index) => (
+                    <li onClick={e => tagSearch(e)} key={index}>{tag}</li>
                 )) : null}
             </ul>
         </div>
