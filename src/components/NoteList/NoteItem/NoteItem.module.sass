@@ -1,6 +1,6 @@
+@import '../../../_variables.sass'
+
 .noteItemContainer
-  background-color: rgba(62, 73, 141, 0.01)
-  border-radius: 5px
   width: 90%
   padding: 5px
 
@@ -11,15 +11,19 @@
   width: 100%
   flex: none
   height: 65px
-  background-color: rgba(62, 73, 141, 0.1)
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.24)
+  background-color: $item
+  color: $font
+  //box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2)
   border-radius: 5px 20px
   display: flex
   align-items: flex-start
   justify-content: space-between
   transition: .2s
+  border-bottom: 1px dotted $top
 
   &:hover
+    background-color: $list
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2)
     transform: scale(1.05)
 
   button
@@ -30,7 +34,7 @@
     font-size: 24px
     transition: .2s
     &:hover
-      color: #ff0000
+      color: $red
       transform: scale(1.1)
 
   p
@@ -39,7 +43,7 @@
 
 .tagsBlock li
   cursor: pointer
-  background: lightblue
+  background: $item
   border-radius: 50px
   display: inline-block
   padding: 2px 5px
@@ -47,7 +51,7 @@
   font-size: 10px
   transition: .2s
   &:hover
-    background: lightcoral
+    background: $tags
     transform: scale(1.1)
 
 ul

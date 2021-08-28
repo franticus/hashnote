@@ -1,7 +1,23 @@
+@import '../../_variables.sass'
+
+.searchBarContainer
+  display: flex
+  align-items: center
+  justify-content: center
+  span
+    color: $top
+    margin-left: 10px
+    cursor: pointer
+    transition: .2s ease-in-out
+    &:hover
+      transform: rotate(180deg) scale(1.4)
+      color: $red
+
 .searchBar
   padding: 1px 20px
   outline: none
   border: none
-  border-bottom: 1px solid #38698d
+  background: $list
+  border-bottom: 1px solid $top
   letter-spacing: 1px
   font-family: inherit
