@@ -5,7 +5,7 @@ import FooterAdd from "./components/FooterAdd/FooterAdd";
 import NoteList from "./components/NoteList/NoteList";
 import EditScreen from "./components/EditScreen/EditScreen";
 import SearchBar from "./components/SearchBar/SearchBar";
-import {filterTags} from "./services";
+import {createNote, getNotes} from "./services/api";
 
 function App() {
     const [noteList, setNoteList] = useState([])
@@ -17,7 +17,6 @@ function App() {
         footer: 'Добавить', step: 1
     })
     const [searchNote, setSearchNote] = useState('')
-
     const editToggle = () => {
         showEdit.step === 1
             ?
@@ -32,13 +31,12 @@ function App() {
             })
         setNote({...note, text: ''})
     }
-
     const editNote = (editedNote) => {
         setShowEdit({
             onShow: true, title: 'Редактирование',
             footer: 'Применить', step: 3
         })
-        setNote({...note, text: note.text, tags: filterTags(editedNote)})
+        setNote(editedNote)
 
     }
     const addNote = () => {
@@ -53,10 +51,9 @@ function App() {
             setNoteList(editPost)
         }
         if (showEdit.step === 2 && note.text !== '') {
-
-            const newNote = {...note, id: Date.now(), tags: filterTags()}
+            const newNote = {...note, id: Date.now()}
             setNoteList([...noteList, newNote])
-            console.log('NewNote', newNote)
+            createNote(newNote)
         }
         editToggle()
     }
@@ -73,13 +70,16 @@ function App() {
         setSearchNote(e.target.innerText)
     }
 
+
+
     return (
         <div className="App">
             <TitleAdd title={showEdit.title}/>
             <SearchBar value={searchNote} clear={clearSearch}
                        onChange={e => setSearchNote(e.target.value)}
             />
-            <NoteList notes={searchedNotes} editNote={editNote}
+            <NoteList notes={searchedNotes}
+                      editNote={editNote}
                       remove={removeNote} tagSearch={e => tagSearch(e)}
             />
             {showEdit.onShow &&

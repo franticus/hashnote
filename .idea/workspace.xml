@@ -16,6 +16,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hashnote-backend" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JS\hashnote\src\services" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -27,11 +33,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630315381108</updated>
-      <workItem from="1630315389401" duration="298000" />
+      <workItem from="1630315389401" duration="3912000" />
+      <workItem from="1630320860308" duration="8212000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="260" y="283" key="FileChooserDialogImpl" timestamp="1630321603153">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="260" y="283" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1630321603153" />
+    <state x="191" y="270" width="605" height="516" key="find.popup" timestamp="1630316406845">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="191" y="270" width="605" height="516" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1630316406845" />
   </component>
 </project>

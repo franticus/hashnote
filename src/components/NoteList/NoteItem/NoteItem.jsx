@@ -14,7 +14,6 @@ const NoteItem = ({text, id, remove, editNote, tags, tagSearch}) => {
                           id={id}
                           icon='fal fa-trash-alt'/>
             </div>
-            {console.log('TAGS', tags)}
             <ul className={classes.tagsBlock}>
                 {tags.length >= 1
                     ?
