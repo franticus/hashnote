@@ -5,11 +5,10 @@ import FooterAdd from "./components/FooterAdd/FooterAdd";
 import NoteList from "./components/NoteList/NoteList";
 import EditScreen from "./components/EditScreen/EditScreen";
 import SearchBar from "./components/SearchBar/SearchBar";
+import {filterTags} from "./services";
 
 function App() {
-
-    const [noteList, setNoteList] = useState([]
-    )
+    const [noteList, setNoteList] = useState([])
     const [note, setNote] = useState({
         text: '', tags: []
     })
@@ -17,6 +16,8 @@ function App() {
         onShow: false, title: 'Мои заметки',
         footer: 'Добавить', step: 1
     })
+    const [searchNote, setSearchNote] = useState('')
+
     const editToggle = () => {
         showEdit.step === 1
             ?
@@ -31,22 +32,14 @@ function App() {
             })
         setNote({...note, text: ''})
     }
-    const editNote = (note) => {
+
+    const editNote = (editedNote) => {
         setShowEdit({
             onShow: true, title: 'Редактирование',
             footer: 'Применить', step: 3
         })
-        setNote({...note, text: note.text, tags: note.tags})
-    }
-    const filterTags = () => {
-    const tags = note.text.split(' ')
-    const res = []
-        for (let i = 0; i < tags.length; i++) {
-            if (tags[i].includes("#")) {
-                res.push(tags[i]);
-            }
-        }
-        return res
+        setNote({...note, text: note.text, tags: filterTags(editedNote)})
+
     }
     const addNote = () => {
         if (showEdit.step === 3) {
@@ -63,14 +56,13 @@ function App() {
 
             const newNote = {...note, id: Date.now(), tags: filterTags()}
             setNoteList([...noteList, newNote])
-            console.log('NewNote' , newNote)
+            console.log('NewNote', newNote)
         }
         editToggle()
     }
     const removeNote = (note) => {
         setNoteList(noteList.filter(n => n.id !== note.id))
     }
-    const [searchNote, setSearchNote] = useState('')
     const searchedNotes = noteList.filter(note => {
         return note.text.toLowerCase().includes(searchNote.toLowerCase())
     })
@@ -90,10 +82,9 @@ function App() {
             <NoteList notes={searchedNotes} editNote={editNote}
                       remove={removeNote} tagSearch={e => tagSearch(e)}
             />
-            {showEdit.onShow
-                ? <EditScreen create={addNote} note={note} cancel={editToggle}
-                              setNote={setNote}
-                /> : null}
+            {showEdit.onShow &&
+            <EditScreen create={addNote} note={note} cancel={editToggle}
+                        setNote={setNote}/>}
             <FooterAdd addNote={addNote}
                        title={showEdit.footer}/>
         </div>
