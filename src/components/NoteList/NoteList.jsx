@@ -7,7 +7,7 @@ const NoteList = ({notes, remove, editNote, tagSearch}) => {
     return (
         <div className={classes.noteList}>
             {notes.map((note, index) => (
-                <NoteItem key={note.id}
+                <NoteItem key={index}
                           remove={() => remove(note)}
                           editNote={() => editNote(note)}
                           id={index}

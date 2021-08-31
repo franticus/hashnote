@@ -20,6 +20,8 @@
   justify-content: space-between
   transition: .2s
   border-bottom: 1px dotted $top
+  @media screen and (max-width: 600px)
+    width: 80vw
 
   &:hover
     background-color: $list
@@ -37,9 +39,11 @@
       color: $red
       transform: scale(1.1)
 
-  p
-    width: 450px
-    height: 55px
+  & p
+     width: 450px
+     height: 55px
+     @media screen and (max-width: 600px)
+       width: 65vw
 
 .tagsBlock li
   cursor: pointer
