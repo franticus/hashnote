@@ -10,7 +10,7 @@ export const createNote = async (newNote) => {
     await axios.post(`${apiUrl}/createNote`, newNote)
 
 }
-export const editorNote = async (editedNote) => {
+export const editNote = async (editedNote) => {
     await axios.post(`${apiUrl}/editNote`, editedNote)
 }
 

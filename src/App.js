@@ -5,7 +5,7 @@ import FooterAdd from "./components/FooterAdd/FooterAdd";
 import NoteList from "./components/NoteList/NoteList";
 import EditScreen from "./components/EditScreen/EditScreen";
 import SearchBar from "./components/SearchBar/SearchBar";
-import {createNote, deleteNote, editorNote, getNotes} from "./services/api";
+import {createNote, deleteNote, editNote, getNotes} from "./services/api";
 
 function App() {
 
@@ -32,7 +32,7 @@ function App() {
             })
         setNote({...note, text: ''})
     }
-    const editNote = (editedNote) => {
+    const changeNote = (editedNote) => {
         console.log(editedNote)
         setShowEdit({
             onShow: true, title: 'Редактирование',
@@ -42,7 +42,7 @@ function App() {
     }
     const addNote = async () => {
         if (showEdit.step === 3) {
-            await editorNote(note)
+            await editNote(note)
             const newList = await getNotes()
             setNoteList(newList)
         }
@@ -85,7 +85,7 @@ function App() {
                        onChange={e => setSearchNote(e.target.value)}
             />
             <NoteList notes={searchedNotes}
-                      editNote={editNote}
+                      editNote={changeNote}
                       remove={removeNote} tagSearch={e => tagSearch(e)}
             />
             {showEdit.onShow &&
